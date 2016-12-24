@@ -12,6 +12,16 @@ body {
     min-width: 980px;
 }
 
+.comment-box {
+  padding: 2em;
+  padding-top: 1em;
+}
+
+.fb-comments, .fb-comments * {
+    width: 100% !important;
+}
+
+
 a { color: #0252aa; text-decoration: none; cursor: pointer; }
 a:hover { text-decoration: underline; }
 a img { border: 0; }
