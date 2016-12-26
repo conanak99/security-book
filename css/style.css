@@ -12,6 +12,11 @@ body {
     min-width: 980px;
 }
 
+#download-count {
+  text-align: center;
+  margin-bottom: 0.3em;
+}
+
 .comment-box {
   padding: 2em;
   padding-top: 1em;

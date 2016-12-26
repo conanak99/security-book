@@ -79,11 +79,13 @@
 
                         <!-- Step 1 -->
                         <div class="steps step-1">
+                                                  <h2 id="download-count">Lượt tải: 0</h2>
                             <a class="submit-button link" target="_blank"
                             onclick="ga('send', 'event', 'PDF Download', 'click', 'Bảo mật nhập môn');"
                             href="http://goo.gl/wWmHqc">
                                 Tải ebook</a>
                         </div>
+
                         <p class="note">Bản thân Hoàng rất ghét việc phải nhập email hoặc like để tải ebook, do đó mình không ép các bạn làm vậy.
                             <br/>
                             Nếu bạn thấy có ích, hãy giúp Hoàng
@@ -123,5 +125,15 @@
   ga('create', 'UA-89403583-1', 'auto');
   ga('send', 'pageview');
 
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+  var shortUrl = "http://goo.gl/wWmHqc";
+  var url = "https://www.googleapis.com/urlshortener/v1/url?shortUrl=" + shortUrl + "&projection=ANALYTICS_CLICKS&key=AIzaSyA2LEe0I77m4pbloQXce357njClj-Akllk";
+  $.get(url, function(result) {
+    console.log(result);
+    var number = result.analytics.allTime.longUrlClicks;
+    $('#download-count').text("Lượt tải: " + number);
+  });
 </script>
         </html>
