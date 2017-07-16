@@ -30,7 +30,7 @@
         <!-- Sidebar -->
         <aside id="sidebar">
             <div class="item">
-                <a target="_blank" href="http://goo.gl/wWmHqc" onclick="ga('send', 'event', 'PDF Download', 'click', 'Bảo mật nhập môn - Side');"><img class="item-img" src="css/images/3dbook.png" alt="" /></a>
+                <a class="download" target="_blank" href="http://goo.gl/wWmHqc" onclick="ga('send', 'event', 'PDF Download', 'click', 'Bảo mật nhập môn - Side');"><img class="item-img" src="css/images/3dbook.png" alt="" /></a>
             </div>
             <h2>
                     <span>Bảo Mật Nhập Môn</span>
@@ -83,12 +83,11 @@
                     <div class="steps step-1">
                         <h2 id="download-count">Lượt tải: 0 </h2>
 
-
-                        <a class="submit-button link" target="_blank" onclick="ga('send', 'event', 'PDF Download', 'click', 'Bảo mật nhập môn');" href="http://goo.gl/wWmHqc">
+                        <a class="submit-button link download" target="_blank" onclick="ga('send', 'event', 'PDF Download', 'click', 'Bảo mật nhập môn');" href="http://goo.gl/wWmHqc">
                                 Tải ebook (PDF)</a>
 
                         <p style="text-align:center">
-                            <a target="_blank" onclick="ga('send', 'event', 'PDF Download', 'click', 'Bảo mật nhập môn - Mobi');" href="https://drive.google.com/file/d/0B-hTIM3aG_oJT2VONldEWjFyOVk/view?usp=sharing">Bản .mobi cho Kindle</a>
+                            <a class="download" target="_blank" onclick="ga('send', 'event', 'PDF Download', 'click', 'Bảo mật nhập môn - Mobi');" href="https://drive.google.com/file/d/0B-hTIM3aG_oJT2VONldEWjFyOVk/view?usp=sharing">Bản .mobi cho Kindle</a>
                         </p>
                     </div>
 
@@ -150,7 +149,32 @@
         $('#download-count').text("Lượt tải: " + number);
     });
 </script>
-    
+
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">require(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us13.list-manage.com","uuid":"65d6693da4383efd12df0797e","lid":"e040dff756"}) })</script>
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '598240393698367'); // Insert your pixel ID here.
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=598240393698367&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Facebook Pixel Code -->
+    <script>
+      fbq('track', 'ViewContent', {
+        value: 'Bảo Mật Nhập Môn'
+      });
+
+        $('.download').click(() => {
+          fbq('track', 'Download');
+        });
+
+    </script>
 
 </html>
