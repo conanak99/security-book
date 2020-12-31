@@ -23,12 +23,3 @@
 
 ga('create', 'UA-89403583-1', 'auto');
 ga('send', 'pageview');
-
-const shortUrl = "http://goo.gl/wWmHqc";
-const url = "https://www.googleapis.com/urlshortener/v1/url?shortUrl=" + shortUrl + "&projection=ANALYTICS_CLICKS&key=AIzaSyA2LEe0I77m4pbloQXce357njClj-Akllk";
-fetch(url)
-    .then(function(res) { return res.json(); })
-    .then(function(res) {
-        const number = res.analytics.allTime.longUrlClicks;
-        document.querySelector('#download-count').innerText = "Lượt tải: " + number;
-    });
