@@ -1,0 +1,171 @@
+---
+import "@/styles/global.css";
+import { Image } from "astro:assets";
+import { Download, Lock, Shield, Terminal } from "lucide-react";
+
+import bookCover from "@/assets/3dbook.png";
+import logo from "@/assets/logo.jpg";
+
+import { Card, CardContent } from "@/components/ui/card";
+import { buttonVariants } from "@/components/ui/button";
+import AnimateCanvas from "@/components/ui/animate-canvas";
+---
+
+<html lang="en">
+  <head>
+    <title>Free Ebook - Bảo Mật Nhập Môn</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta
+      name="description"
+      content="Ebook Bảo Mật Cơ Bản cho Developer - Những kiến thức vô cùng cơ bản về bảo mật mà developer nào cũng cần phải biết để bảo vệ website"
+    />
+    <meta name="keywords" content="security, developer, toidicodedao, basic" />
+    <meta name="author" content="Hoàng Phạm" />
+
+    <meta property="fb:admins" content="100001799469827" />
+    <meta property="fb:app_id" content="619456688258561" />
+    <meta property="og:title" content="Free Ebook - Bảo Mật Nhập Môn" />
+    <meta property="og:url" content="https://security.toidicodedao.com/" />
+    <meta
+      property="og:description"
+      content="Ebook Bảo Mật Cơ Bản cho Developer - Những kiến thức vô cùng cơ bản về bảo mật mà developer nào cũng cần phải biết để bảo vệ website"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta property="og:image" content={bookCover.src} />
+
+    <link rel="icon" type="image/svg+xml" href={logo.src} />
+  </head>
+  <body>
+    <div class="relative min-h-screen bg-black text-white overflow-hidden">
+      <AnimateCanvas client:load />
+      <div class="relative z-10 container px-4 mx-auto py-12 md:py-24">
+        <div class="grid gap-12 lg:grid-cols-5 lg:gap-16 items-center">
+          <a
+            href="https://bit.ly/td-secu"
+            target="_blank"
+            class="hidden lg:block relative group lg:col-span-2"
+          >
+            <div
+              class="absolute inset-0 bg-cyan-500 rounded-xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"
+            >
+            </div>
+            <Image
+              alt="Bảo Mật Nhập Môn Book Cover"
+              class="relative aspect-[3/4] w-full object-contain rounded-xl shadow-2xl transition-transform group-hover:scale-105 border border-cyan-500"
+              height={600}
+              width={450}
+              src={bookCover}
+            />
+          </a>
+          <div class="lg:col-span-3 space-y-8">
+            <div class="space-y-6">
+              <div class="flex items-center gap-4 lg:gap-8 shrink-0">
+                <Image
+                  alt="Tôi đi code dạo Logo"
+                  class="w-20 lg:w-28 h-20 lg:h-28 rounded-sm"
+                  height={112}
+                  width={112}
+                  src={logo}
+                />
+                <h1
+                  class="font-bold tracking-tight text-2xl md:text-5xl/tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 to-purple-500"
+                >
+                  Bảo Mật Nhập Môn <br /> Bảo mật cơ bản cho Developer
+                </h1>
+              </div>
+              <p class="text-lg text-gray-300">
+                Những kiến thức vô cùng cơ bản về bảo mật mà developer nào cũng
+                cần phải biết để bảo vệ website
+              </p>
+            </div>
+
+            <Card className="bg-gray-900/80 border-cyan-500 backdrop-blur-sm">
+              <CardContent className="p-6 space-y-4">
+                <h2 class="text-2xl font-bold text-cyan-400">Nội dung ebook</h2>
+                <ul class="space-y-3 text-gray-100">
+                  <li class="flex items-start gap-3">
+                    <Shield className="h-5 w-5 mt-1 text-cyan-400 shrink-0" />
+                    <span>Độ bảo mật của HTTP</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <Lock className="h-5 w-5 mt-1 text-cyan-400  shrink-0" />
+                    <span
+                      >Các lỗ hổng bảo mật thường gặp, độ nguy hiểm và cách
+                      phòng chống: SQL Injection, XSS, CSRF,...</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <Terminal
+                      className="h-5 w-5 mt-1 text-cyan-400  shrink-0"
+                    />
+                    <span>Những phương pháp bảo mật hiệu quả, dễ thực hiện</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <Shield className="h-5 w-5 mt-1 text-cyan-400  shrink-0" />
+                    <span
+                      >Case study: Lỗ hổng bảo mật của Lotte Cinema, Lozi.vn</span
+                    >
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <div>
+              <p class="text-base text-gray-300">
+                Tất cả được trình bày với những ví dụ cụ thể sinh động, qua
+                giọng văn hài hước, gần gũi của anh{" "}
+                <a
+                  href="https://www.facebook.com/huyhoang.pham.106/"
+                  target="_blank"
+                  class="text-cyan-400 hover:underline"
+                >
+                  Phạm Huy Hoàng
+                </a>
+                , chủ blog nổi tiếng{" "}
+                <a
+                  href="https://toidicodedao.com"
+                  target="_blank"
+                  class="text-cyan-400 hover:underline"
+                >
+                  Tôi đi code dạo
+                </a>
+                .
+              </p>
+
+              <div class="flex items-center justify-between mt-10">
+                <div class="block lg:hidden relative group lg:col-span-2 pr-6">
+                  <div
+                    class="absolute inset-0 bg-cyan-500 rounded-xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"
+                  >
+                  </div>
+                  <Image
+                    alt="Bảo Mật Nhập Môn Book Cover"
+                    class="relative aspect-[3/4] w-full object-contain rounded-xl shadow-2xl transition-transform group-hover:scale-105 border border-cyan-500"
+                    height={600}
+                    width={450}
+                    src={bookCover}
+                  />
+                </div>
+                <div
+                  class="flex gap-4 items-center justify-center lg:w-full flex-col lg:flex-row text-base font-semibold shrink-0"
+                >
+                  <a
+                    href="https://bit.ly/td-secu"
+                    target="_blank"
+                    class=`${buttonVariants({ size: "lg" })} w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white border-none`
+                  >
+                    <Download className="mr-2 h-5 w-5" />
+                    <span class="text-base font-semibold">Tải ebook (PDF)</span>
+                  </a>
+
+                  <p class="text-gray-300 shrink-0">Lượt tải: 34950</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
